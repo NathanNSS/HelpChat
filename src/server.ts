@@ -1,6 +1,8 @@
-import express, { request, response } from 'express';
+import express from 'express';
 
-const app = express();
+import "./database";
+
+import { routes } from "./routes";
 
 /**
  * GET = Buscas
@@ -9,12 +11,11 @@ const app = express();
  * DELETE = DELETAR
  * PATCH = Alterar uma Informação Especifica 
  */
-app.get("/",(request, response) =>{
-    return  response.send("Olá Mundo :)")
-})
 
-app.post("/",(request, response) =>{
-    return response.json({message: "Hello Word :)"})
-})
+const app = express();
+
+app.use(express.json());
+
+app.use(routes);
 
 app.listen(3333, () => console.log('Ta Rodando :)'));
