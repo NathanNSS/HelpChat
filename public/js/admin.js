@@ -96,7 +96,7 @@ socket.on("admin_receive_message", (data) => {
   console.log(data);
   console.log("admin recebe mensage");
 
-  const connection = connectionInSupport.find((connection) => (connection.socket_id === data.socket_id));
+  const connection = connectionInSupport.find( connection => connection.socket_id === data.socket_id);
     
   const divMessages = document.getElementById(`allMessages${connection.user_id}`);
     

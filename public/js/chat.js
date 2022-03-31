@@ -87,4 +87,7 @@ document
     });
 
     document.getElementById("messages").innerHTML += rendered;
+
+    text.value = "";
+
   });
